@@ -139,6 +139,8 @@ sudo npm install -g bower
 sudo npm install -g jshint
 sudo npm install -g yo
 
+npm install -g http-server    // node 新建一个服务器
+
 npm install -g node-inspector // 调试node代码
 sudo npm install -g weinre    // 调试webview的样式及请求很好的一个工具
 ```
