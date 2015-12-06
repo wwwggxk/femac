@@ -18,16 +18,21 @@ system -> preference -> sharing
 
 系统 -> 偏好设置 -> 共享
 
-### 3.触摸板
+### 3.Dock栏加入最近使用的app
+打开Terminal, 输入defaults write com.apple.dock persistent-others -array-add
+'{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }';
+killall Dock回车
+
+### 4.触摸板
 MAC的触摸半绝对是pc中最好用的, 用好了可以不用鼠标了(前端，其它就不清楚了)
 
 - 开启单击轻触
-- 双指滚动
+- 双指轻触右击及滚动
 - 三指选取移动
 - 四指换屏
 - 五指显示桌面
 
-### 4.软件
+### 5.软件
 
 常用
 
@@ -40,12 +45,20 @@ MAC的触摸半绝对是pc中最好用的, 用好了可以不用鼠标了(前端
 - thunder
 - vlc
 - office for mac
+- mindnode pro
+- istat menus   // 电脑状态
+- moom          // 窗口调整
+- beyondcompare // 文件对比
+- tuxerantfs    // mac读写移动硬盘
+- tickeys       // 按键声
+- noizio        // 环境声模拟
 
 偏向开发
 
 - opera
 - chrome
-  - 插件:switchyomega,可在网上下crx离线文件
+  - 插件:switchyomega,可在网上下crx离线文件, ublock, wappalyzer(网页技术分析)
+  - postman,api测试很好的工具
   - google账号一个，同步方便
 - firefox
   - 插件:autoproxy, ublock,firebug
@@ -70,9 +83,8 @@ MAC的触摸半绝对是pc中最好用的, 用好了可以不用鼠标了(前端
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-
-
 ### 2.MAC数据库
+
 ```
 brew install mysql   // mysql
 brew install mongodb // mongo
@@ -95,6 +107,8 @@ __好用的shell__:oh my zsh
 ```
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
+
+然后配上一些主题, 个人喜欢agnoster
 
 ### 4.使用最新的vim
 由于很多插件如css color标识等都需要最新的vim, 所以还是用最新的vim
@@ -134,14 +148,23 @@ pip install -r requirements.txt
 
 ### node相关
 ```
+brew install node
 sudo npm install -g grunt-cli
+sudo npm install -g gulp
 sudo npm install -g bower
 sudo npm install -g jshint
 sudo npm install -g yo
 
-npm install -g node-inspector // 调试node代码
-sudo npm install -g weinre    // 调试webview的样式及请求很好的一个工具
+npm install -g node-inspector   // 调试node代码
+sudo npm install -g weinre      // 调试webview的样式及请求很好的一个工具
+sudo npm install -g http-server // 基于命令行服务器
 ```
+
+### 跨平台pc开发
+electron:
+npm install electron-prebuilt -g
+
+nwjs:
 
 ### hybird框架(传说中的全栈全平台前端)
 
