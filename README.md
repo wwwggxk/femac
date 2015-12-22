@@ -155,6 +155,10 @@ sudo npm install -g bower
 sudo npm install -g jshint
 sudo npm install -g yo
 
+nvm:
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh |
+bash
+
 npm install -g http-server    // node 新建一个服务器
 
 npm install -g node-inspector // 调试node代码
