@@ -1,8 +1,11 @@
 # 一个前端的MAC
+
 经常遇到配MAC后不知道如何配环境，或者是要到处在网上找需要安装什么，所以此处列出一个清单。
 
 ## 通用
+
 ### 1.修改MAC主机名
+
 用惯了terminal, 不想看到XXX@localhost， 可以修改一下主机名
 
 修改为主机名为Superman:
@@ -12,6 +15,7 @@ sudo scutil --set HostName Superman
 ```
 
 ### 2.修改MAC共享机器名:
+
 不想别人AirDrop时看到的XXX’MAC, 可以设置一下共享机器名 
 
 system -> preference -> sharing
@@ -19,22 +23,26 @@ system -> preference -> sharing
 系统 -> 偏好设置 -> 共享
 
 ### 3.Dock栏加入最近使用的app
+
 打开Terminal, 输入defaults write com.apple.dock persistent-others -array-add
 '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }';
 killall Dock回车
 
 ### 4.触摸板
+
 MAC的触摸半绝对是pc中最好用的, 用好了可以不用鼠标了(前端，其它就不清楚了)
+
+**至少我现在是可以不用鼠标了，哈哈**
 
 - 开启单击轻触
 - 双指轻触右击及滚动
 - 三指选取移动
-- 四指换屏
-- 五指显示桌面
+- 四指换屏, 选择程序
+- 五指显示桌面, 显示所有程序
 
-### 5.软件
+## 软件
 
-常用
+### 常用
 
 - vmware
 - evernote
@@ -46,148 +54,178 @@ MAC的触摸半绝对是pc中最好用的, 用好了可以不用鼠标了(前端
 - vlc
 - office for mac
 - mindnode pro
+- lanscan pro   // 扫描局域网
 - istat menus   // 电脑状态
-- moom          // 窗口调整
+- moom          // 窗口调整,更喜欢spectacle
 - beyondcompare // 文件对比
 - tuxerantfs    // mac读写移动硬盘
 - tickeys       // 按键声
 - noizio        // 环境声模拟
+- licecap       // 大爱的一个生成git录制工具
+- pocket
 
-偏向开发
+### 偏向开发
 
+- git
+- robomongo
+- navicat
 - opera
 - chrome
-  - 插件:switchyomega,可在网上下crx离线文件, ublock, wappalyzer(网页技术分析)
+  - 插件
+  - switchyomega,可在网上下crx离线文件
+  - aka switcher
+  - ublock
   - postman,api测试很好的工具
   - google账号一个，同步方便
+  - [二维码生成器](https://github.com/wungqiang/qrome)
+  - pocket,大爱
+  - wappalyzer, 显示当前网站所用技术栈
 - firefox
-  - 插件:autoproxy, ublock,firebug
+  - 插件
+  - autoproxy
+  - ublock
+  - firebug
 - mou
 - charles
-- lanscan pro
 - alfred 2
 - iterm 2
 - spectacle
 - photoshop
 - dash
 - cheatsheet
+- tower
+- parallels desktop
+- sketch
 
+## 开发使用
 
-## 开发
 安装前请先弄清楚每个是做什么的，然后有选择性的安装
 
 ### 1.MAC上的软件管理器
-如ubuntu的apt-get一样，mac上的包管理器Homebrew
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+- Homebrew
 
 ### 2.MAC数据库
 
-```
-brew install mysql   // mysql
-brew install mongodb // mongo
-brew install redis   // redis
-```
+- mysql
+
+- mongodb
+
+- redis
 
 ### 3.Web服务器
-mac自带的是apache web服务器，但个人还是喜欢nginx的代理设置
-nginx: brew install nginx
 
-在terminal运行git
-command developer tool
+- apache
 
-### 4.Terminal设置，不用的话就不用设置了
+- nginx // 我较偏爱
 
-__推荐使用命令行终端__:iterm2各种分屏等特色功能,然后找个好看的主题
+### 4.Terminal
 
-__好用的shell__:oh my zsh
+- iterm2 // 分屏等，找个好看的主题
 
-```
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-```
+- on my zsh
 
-然后配上一些主题, 个人喜欢agnoster
+### 5.编辑器
 
-### 4.使用最新的vim
-由于很多插件如css color标识等都需要最新的vim, 所以还是用最新的vim
-brew install vim
+- vim // 我较喜欢, 注意升级最新的, 多多的插件
 
-__替换系统的vim__
+- sublime
 
-1. mv /usr/bin/vim /usr/bin/vim/73
-2. 增加 alias vim=‘/usr/local/bin/vim’ 到bash配置文件如 ~/.bash_profile
+- webstorm
 
+### 6.python环境配置
 
-__vim插件管理器Vundle__
+- pip
 
-```
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
+- virtualenv
 
+### 7. node相关模块
 
-## python环境配置
-python包管理器pip:
+- cnpm // 经常有网络问题(你懂的), 不能下包，可用这个
 
-```
-sudo easy_install pip
-```
+- node/npm
 
-python环境配置在特定目录，而不用安装在系统中virtualenv:
+- webpack
 
-```
-sudo pip install virtualenv
-```
+- grunt-cli
 
-// pip安装python依赖
-pip install -r requirements.txt
+- gulp
 
+- bower
 
-## 前端
+- yo
 
-### node相关
-```
-brew install node
-sudo npm install -g grunt-cli
-sudo npm install -g gulp
-sudo npm install -g bower
-sudo npm install -g jshint
-sudo npm install -g yo
+- nvm
 
-nvm:
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh |
-bash
+- http-server
 
-npm install -g http-server    // node 新建一个服务器
+- node-inspector // 调试node代码
 
-npm install -g node-inspector // 调试node代码
-sudo npm install -g weinre    // 调试webview的样式及请求很好的一个工具
-```
+- weinre // 调试webview的样式及请求很好的一个工具
 
-### 跨平台pc开发
-electron:
-npm install electron-prebuilt -g
+- phantomjs
 
-nwjs:
+- express
 
-### hybird框架(传说中的全栈全平台前端)
+- lodash // tool utilities
 
-```
-sudo npm install -g cordova ionic
-sudo npm install -g ios-sim
+- request // http request client
 
-sudo npm install -g cordova
-sudo npm install -g phonegap
-```
+- pm2/forever/supervisor
 
-### css预编译框架
+- async/when/promise/bluebird
 
-```
-sass:sudo gem install sass
+- socket.io
 
-compass:sudo gem install compass
-```
+- moment
+
+- pdfkit
+
+- redis // redis node driver
+
+- mongo
+
+- mongoose
+
+- node-mkdirp
+
+- debug/morgan
+
+- ssh2
+
+- shelljs
+
+- node-xml2js
+
+- nconf
+
+- nodemailer
+
+- jsonwebtoken
+
+- node-uuid
+
+### 8.跨平台开发
+
+- electron
+
+- nwjs
+
+### 9.hybird框架(传说中的全栈全平台前端)
+
+- cordova
+
+- ionic
+
+- phonegap
+
+### 10.css预编译框架
+
+- sass
+
+- less
+
+- compass
 
 __安装compass不成功时可修改安装源__:
 
